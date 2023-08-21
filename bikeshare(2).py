@@ -21,7 +21,7 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     while True:
-        city = input("\nSelect the name of the city to view the data: Chicago, New York City, or Washington?\n").lower()
+        city = input("\nSelect the name of the city: Chicago, New York City, or Washington?\n").lower()
         if city not in CITY_DATA:
             print("Sorry, this is an invalid city name. Please try again.")
             continue
@@ -130,7 +130,7 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     Combination_Station = df.groupby(['Start Station', 'End Station']).count()
-    print('\nThe most commonly used combination of start station and end station trip:', Start_Station, " & ", End_Station)
+    print('\nThe most commonly used combination of start and end station trip:', Start_Station, " & ", End_Station)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
